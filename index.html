@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cordell Sampson | Operations & Logistics Analyst</title>
+<meta name="description" content="Cordell Sampson: operations, technology support, and data analysis. Chicago, IL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b2545; --blue:#1d4ed8; --sky:#e8f0fe; --ink:#16233b; --muted:#54627a;
+  --line:#d6e0f0; --bg:#f7f9fd; --card:#ffffff;
+  --font:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.65;font-size:1rem}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid #f5b800;outline-offset:3px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:10;background:rgba(11,37,69,.96);backdrop-filter:blur(6px)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;gap:1rem}
+.nav strong{color:#fff;font-weight:800;letter-spacing:.01em}
+.nav ul{display:flex;gap:1.25rem;list-style:none;flex-wrap:wrap}
+.nav a{color:#c9d8f5;text-decoration:none;font-size:.92rem;font-weight:500}
+.nav a:hover{color:#fff}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:5.5rem 0 0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:44px 44px;mask-image:linear-gradient(#000 30%,transparent 95%);-webkit-mask-image:linear-gradient(#000 30%,transparent 95%)}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(2.6rem,9vw,5.6rem);line-height:1;font-weight:800;letter-spacing:-.03em}
+.hero .title{margin-top:1.1rem;font-size:clamp(1.15rem,3vw,1.6rem);font-weight:500;color:#9cc0ff}
+.hero .pitch{margin-top:1.25rem;max-width:56ch;color:#d3e0f7;font-size:1.06rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.3rem;border-radius:8px;font-weight:700;text-decoration:none;font-size:.97rem}
+.btn.primary{background:#fff;color:var(--navy)}
+.btn.primary:hover{background:var(--sky)}
+.btn.ghost{border:1.5px solid #5f83c4;color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+/* metrics strip */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);margin-top:4rem;border:1px solid #29487a;border-bottom:0;border-radius:12px 12px 0 0;background:rgba(255,255,255,.04)}
+.metric{padding:1.4rem 1.2rem;border-right:1px solid #29487a}
+.metric:last-child{border-right:0}
+.metric b{display:block;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;line-height:1.1}
+.metric span{display:block;margin-top:.35rem;font-size:.88rem;color:#a9c0e8}
+
+/* sections */
+section{padding:4.5rem 0}
+h2{font-size:clamp(1.6rem,4vw,2.1rem);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin-bottom:.6rem}
+h2 .ic{margin-right:.5rem}
+.lead{color:var(--muted);max-width:64ch;margin-bottom:2rem}
+.about p{max-width:68ch;font-size:1.08rem}
+
+/* timeline */
+.timeline{list-style:none;border-left:3px solid var(--line);margin-left:.5rem}
+.job{position:relative;padding:0 0 2.2rem 1.6rem}
+.job::before{content:"";position:absolute;left:-9.5px;top:.45rem;width:16px;height:16px;border-radius:50%;background:#fff;border:4px solid var(--blue)}
+.job h3{font-size:1.2rem;color:var(--navy);line-height:1.3}
+.job .meta{color:var(--muted);font-size:.93rem;margin:.15rem 0 .7rem}
+.job .now{display:inline-block;background:var(--sky);color:var(--blue);font-weight:700;font-size:.78rem;padding:.1rem .55rem;border-radius:99px;margin-left:.4rem;vertical-align:middle}
+.job ul{padding-left:1.15rem;max-width:70ch}
+.job li{margin-bottom:.35rem}
+.job li::marker{color:var(--blue)}
+
+/* projects & education */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.5rem}
+.card .emoji{font-size:1.7rem;line-height:1;display:block;margin-bottom:.8rem}
+.card h3{font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;line-height:1.35}
+.card p,.card li{color:var(--muted);font-size:.97rem}
+.card ul{padding-left:1.1rem}
+.edu .card{border-top:4px solid var(--blue)}
+.edu small{display:block;color:var(--blue);font-weight:700;margin-top:.6rem;font-size:.9rem}
+
+/* skills */
+.skills{background:var(--sky)}
+.skill-group{margin-bottom:1.6rem}
+.skill-group h3{font-size:1rem;color:var(--navy);margin-bottom:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{background:#fff;border:1px solid #bcd0f2;color:var(--navy);padding:.35rem .85rem;border-radius:99px;font-size:.92rem;font-weight:500}
+
+/* contact */
+.contact{background:var(--navy);color:#fff;text-align:center}
+.contact h2{color:#fff}
+.contact p{color:#c9d8f5;max-width:52ch;margin:0 auto 1.8rem}
+.contact .cta{justify-content:center}
+footer{background:#08182f;color:#8ea6cf;text-align:center;padding:1.4rem 0;font-size:.88rem}
+
+@media (max-width:760px){
+  .nav ul{display:none}
+  .hero{padding-top:3.5rem}
+  .metrics{grid-template-columns:1fr 1fr;margin-top:3rem}
+  .metric:nth-child(2){border-right:0}
+  .metric:nth-child(-n+2){border-bottom:1px solid #29487a}
+  section{padding:3.2rem 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <strong>Cordell Sampson</strong>
+    <nav aria-label="Main"><ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <h1>Cordell Sampson</h1>
+    <p class="title">📊 Operations &amp; Logistics Analyst</p>
+    <p class="pitch">I turn messy workflows into clear systems. Excel trackers, dashboards, and alerts that save time, cut costs, and help teams make better decisions.</p>
+    <div class="cta">
+      <a class="btn primary" href="#contact">✉️ Get in touch</a>
+      <a class="btn ghost" href="#experience">💼 See my experience</a>
+    </div>
+    <div class="metrics" role="list">
+      <div class="metric" role="listitem"><b>~20%</b><span>faster customer order processing</span></div>
+      <div class="metric" role="listitem"><b>$1,000+</b><span>overhead saved in three months</span></div>
+      <div class="metric" role="listitem"><b>30–35</b><span>employees led per shift</span></div>
+      <div class="metric" role="listitem"><b>3.67</b><span>GPA in M.S. Technology Management</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <h2><span class="ic">👋</span>About me</h2>
+    <p>I work across operations, technology support, data analysis, and process improvement. I like solving technical problems, tightening workflows, coordinating projects, and using data to back up business decisions. Teammates know me for analytical thinking and adaptability. I'm looking for a technology or operations role where I can keep growing and deliver measurable results.</p>
+  </div>
+</section>
+
+<section id="experience" style="background:#fff">
+  <div class="wrap">
+    <h2><span class="ic">💼</span>Experience</h2>
+    <p class="lead">From running a grocery floor to building logistics systems and supporting campus tech labs.</p>
+    <ol class="timeline">
+      <li class="job">
+        <h3>Operations &amp; Logistics Analyst <span class="now">Current</span></h3>
+        <p class="meta">AlreadyUP · Chicago, IL · May 2026 to present</p>
+        <ul>
+          <li>Designed an Excel logistics tracker for customer profiles, inventory, equipment scheduling, and safety inventory.</li>
+          <li>Built automated inventory alerts that improved fulfillment accuracy.</li>
+          <li>Reduced operational overhead by more than $1,000 in three months.</li>
+          <li>Cut customer order processing time by about 20% through improved workflows.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <h3>Graduate Assistant <span class="now">Current</span></h3>
+        <p class="meta">Eastern Illinois University · Charleston, IL · Aug 2025 to present</p>
+        <ul>
+          <li>Supported technology labs serving 20 to 25 students weekly.</li>
+          <li>Resolved technical issues and coordinated support requests.</li>
+          <li>Documented recurring issues to make troubleshooting more consistent.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <h3>Women's Basketball Manager <span class="now">Current</span></h3>
+        <p class="meta">Eastern Illinois University · Charleston, IL · Oct 2024 to present</p>
+        <ul>
+          <li>Developed Excel dashboards analyzing shot efficiency by shot clock and court location.</li>
+          <li>Managed scheduling, equipment, travel logistics, and operational reporting.</li>
+        </ul>
+      </li>
+      <li class="job">
+        <h3>Grocery Manager</h3>
+        <p class="meta">Jewel-Osco · Chicago, IL · May 2023 to Apr 2026</p>
+        <ul>
+          <li>Completed management training across six departments.</li>
+          <li>Led daily operations for teams of 30 to 35 employees.</li>
+          <li>Supported onboarding, inventory, and customer service.</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2><span class="ic">🚀</span>Projects</h2>
+    <p class="lead">Two builds where data changed how a team worked.</p>
+    <div class="grid">
+      <article class="card">
+        <span class="emoji" aria-hidden="true">🏀</span>
+        <h3>Shot efficiency dashboards</h3>
+        <p>Built Excel dashboards that analyze shot efficiency by court location and shot clock. Presented the insights to support coaching decisions.</p>
+      </article>
+      <article class="card">
+        <span class="emoji" aria-hidden="true">🔔</span>
+        <h3>Automated inventory alerts</h3>
+        <p>Created alerts that reduced scheduling conflicts and improved equipment availability.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="edu" style="background:#fff">
+  <div class="wrap">
+    <h2><span class="ic">🎓</span>Education</h2>
+    <p class="lead">Both degrees from Eastern Illinois University.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>M.S. Technology Management</h3>
+        <p>Expected December 2026</p>
+        <small>GPA 3.67 · National Society of Leadership and Success</small>
+      </article>
+      <article class="card">
+        <h3>B.S. Digital Media and Technology</h3>
+        <p>May 2025</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills">
+  <div class="wrap">
+    <h2><span class="ic">🛠️</span>Skills</h2>
+    <p class="lead">The tools and methods I use most.</p>
+    <div class="skill-group">
+      <h3>📈 Data &amp; tools</h3>
+      <div class="chips">
+        <span class="chip">Excel</span><span class="chip">Pivot Tables</span><span class="chip">XLOOKUP</span><span class="chip">SQL</span>
+        <span class="chip">Dashboard Development</span><span class="chip">Data Visualization</span><span class="chip">Database Management</span>
+        <span class="chip">Google Workspace</span><span class="chip">HTML/CSS</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>⚙️ Operations</h3>
+      <div class="chips">
+        <span class="chip">Inventory Analysis</span><span class="chip">Project Coordination</span><span class="chip">Operations Management</span>
+        <span class="chip">Process Improvement</span><span class="chip">Troubleshooting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2><span class="ic">📬</span>Let's talk</h2>
+    <p>Open to technology and operations roles. Email is the fastest way to reach me.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:cordelldsampson@gmail.com">✉️ cordelldsampson@gmail.com</a>
+      <a class="btn ghost" href="https://linkedin.com/in/cordell-sampson-9049a6326" target="_blank" rel="noopener">🔗 LinkedIn</a>
+    </div>
+    <p style="margin:1.6rem 0 0">📍 Chicago, IL</p>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Cordell Sampson</footer>
+</body>
+</html>
